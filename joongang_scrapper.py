@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-def search_news():
+def search_joongang_news():
     search = input()
     URL = f"https://www.joongang.co.kr/search/news?keyword={search}"
     return URL
@@ -13,8 +13,8 @@ def extract_new(html):
         'news_title':news_title,
         'news_url':news_url
     }
-
-def extract_news(URL):
+    
+def extract_joongang_news(URL):
     cards = []
     res = requests.get(URL)
     res.raise_for_status()
